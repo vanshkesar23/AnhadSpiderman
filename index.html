@@ -251,7 +251,7 @@
     #suitStage { width: 96px; height: 116px; }
   }
 </style>
-<link rel="stylesheet" href="src/desktop.css?v=150">
+<link rel="stylesheet" href="src/desktop.css?v=151">
 </head>
 <body>
 <div id="game"></div>
@@ -307,7 +307,7 @@
     <div class="optrow" id="optSkin">
       <span class="lbl">Suit</span>
       <div class="chips">
-        <button data-v="classic" class="sel">Stark</button>
+        <button data-v="classic" class="sel">Anhad Kesar</button>
         <button data-v="black">Symbiote</button>
         <button data-v="iron">Iron Spider</button>
         <button data-v="miles">Miles Morales</button>
@@ -359,45 +359,59 @@
   </div>
 </div>
 
-<script src="lib/three.min.js?v=150"></script>
-<script src="data/city_midtown.js?v=150"></script>
-<script src="data/city_fidi.js?v=150"></script>
-<script src="src/config.js?v=150"></script>
-<script src="src/desktop-profile.js?v=150"></script>
-<script src="src/desktop-textures.js?v=150"></script>
-<script src="src/cityplan.js?v=150"></script>
-<script src="src/cloak.js?v=150"></script>
-<script src="src/comicfx.js?v=150"></script>
-<script src="src/specials.js?v=150"></script>
-<script src="src/suitpreview.js?v=150"></script>
-<script src="src/secrets.js?v=150"></script>
-<script src="src/daily.js?v=150"></script>
-<script src="src/mastery.js?v=150"></script>
-<script src="src/spideysense.js?v=150"></script>
-<script src="src/touch.js?v=150"></script>
-<script src="src/tutorial.js?v=150"></script>
-<script src="src/suithelp.js?v=150"></script>
-<script src="src/crowds.js?v=150"></script>
-<script src="src/events.js?v=150"></script>
-<script src="src/photos.js?v=150"></script>
-<script src="src/districts.js?v=150"></script>
-<script src="src/unlocks.js?v=150"></script>
-<script src="src/city.js?v=150"></script>
-<script src="src/lighting.js?v=150"></script>
-<script src="src/desktop-model.js?v=150"></script>
-<script src="src/hero.js?v=150"></script>
-<script src="src/desktop-suits.js?v=150"></script>
-<script src="src/traffic.js?v=150"></script>
-<script src="src/desktop-art.js?v=150"></script>
-<script src="src/landmarks.js?v=150"></script>
-<script src="src/desktop-world.js?v=150"></script>
-<script src="src/minimap.js?v=150"></script>
-<script src="src/pigeons.js?v=150"></script>
-<script src="src/audio.js?v=150"></script>
-<script src="src/player.js?v=150"></script>
-<script src="src/combat.js?v=150"></script>
-<script src="src/desktop-render.js?v=150"></script>
-<script src="src/desktop-ui.js?v=150"></script>
-<script src="src/main.js?v=150"></script>
+<script src="lib/three.min.js?v=151"></script>
+<script src="data/city_midtown.js?v=151"></script>
+<script src="data/city_fidi.js?v=151"></script>
+<script src="src/config.js?v=151"></script>
+<script src="src/desktop-profile.js?v=151"></script>
+<script src="src/desktop-textures.js?v=151"></script>
+<script src="src/cityplan.js?v=151"></script>
+<script src="src/cloak.js?v=151"></script>
+<script src="src/comicfx.js?v=151"></script>
+<script src="src/specials.js?v=151"></script>
+<script src="src/suitpreview.js?v=151"></script>
+<script src="src/secrets.js?v=151"></script>
+<script src="src/daily.js?v=151"></script>
+<script src="src/mastery.js?v=151"></script>
+<script src="src/spideysense.js?v=151"></script>
+<script src="src/touch.js?v=151"></script>
+<script src="src/tutorial.js?v=151"></script>
+<script src="src/suithelp.js?v=151"></script>
+<script src="src/crowds.js?v=151"></script>
+<script src="src/events.js?v=151"></script>
+<script src="src/photos.js?v=151"></script>
+<script src="src/districts.js?v=151"></script>
+<script src="src/unlocks.js?v=151"></script>
+<script src="src/city.js?v=151"></script>
+<script src="src/lighting.js?v=151"></script>
+<script src="src/desktop-model.js?v=151"></script>
+<script src="src/hero.js?v=151"></script>
+<script src="src/desktop-suits.js?v=151"></script>
+<script src="src/traffic.js?v=151"></script>
+<script src="src/desktop-art.js?v=151"></script>
+<script src="src/landmarks.js?v=151"></script>
+<script src="src/desktop-world.js?v=151"></script>
+<script src="src/minimap.js?v=151"></script>
+<script src="src/pigeons.js?v=151"></script>
+<script src="src/audio.js?v=151"></script>
+<script src="src/player.js?v=151"></script>
+<script src="src/combat.js?v=151"></script>
+<script src="src/desktop-render.js?v=151"></script>
+<script src="src/desktop-ui.js?v=151"></script>
+<script src="src/main.js?v=151"></script>
+
+<script>
+(function(){
+  function renameAnhad(){
+    var name=document.getElementById('suitName');
+    if(name && name.textContent.trim()==='Stark') name.textContent='Anhad Kesar';
+    var buttons=document.querySelectorAll('#optSkin button');
+    buttons.forEach(function(button){if(button.textContent.trim()==='Stark')button.textContent='Anhad Kesar';});
+  }
+  renameAnhad();
+  new MutationObserver(renameAnhad).observe(document.body,{childList:true,characterData:true,subtree:true});
+})();
+</script>
+
 </body>
 </html>
