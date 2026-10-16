@@ -2,8 +2,9 @@
   if(!GAME.desktop)return;
   const tagline=document.querySelector('#menu .tagline');tagline.innerHTML='Your city. Your responsibility. <span>Explore real Manhattan, answer street incidents, and discover the stories above the streets.</span><span style="display:block;margin-top:8px;color:#f0be72;font-size:12px;letter-spacing:.08em;font-weight:600">Built by Vansh Kesar</span>';
   document.querySelector('#menu .brand').textContent='Spider-Man • Manhattan patrol';
-  const suitNameEl=document.getElementById('suitName');
-  if(suitNameEl){const renameClassic=()=>{if(suitNameEl.textContent.trim()==='Stark')suitNameEl.textContent='Anhad Kesar';};new MutationObserver(renameClassic).observe(suitNameEl,{childList:true,characterData:true,subtree:true});renameClassic();}
+  const renameCharacterName=()=>{document.querySelectorAll('#suitName, #suitCard .name, #suitCard h3').forEach(el=>{if(el.textContent.trim()==='Stark')el.textContent='Anhad Kesar';});document.querySelectorAll('#optSkin button').forEach(el=>{if(el.textContent.trim()==='Stark')el.textContent='Anhad Kesar';});};
+  renameCharacterName();
+  new MutationObserver(renameCharacterName).observe(document.body,{childList:true,characterData:true,subtree:true});
   document.querySelector('#optTime [data-v="sunset"]').textContent='Golden hour';
   document.getElementById('startBtn').textContent='Enter the city';
   const options=document.createElement('div');options.id='desktop-options';options.innerHTML=`
